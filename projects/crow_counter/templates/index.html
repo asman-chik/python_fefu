@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Hello, World!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Crow Counter
+{% endblock %}
+
+{% block content %}
+<h1>Crow Counter</h1>
+<div>
+    Count: <span #count>{{ count }}</span>
+</div>
+<form action="{{ url_for('add_crow') }}" method="POST">
+    <button type="submit">Add Crow!</button>
+</form>
+
+{% endblock %}
